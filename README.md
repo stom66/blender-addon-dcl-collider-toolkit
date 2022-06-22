@@ -1,24 +1,29 @@
 # DCL Collider Toolkit
 
-A minimal addon for Blender that lets you easily duplicate a collection and convert it to compatible colliders.
-
-This addon requires Blender 2.93 or later. 
+A minimal addon for Blender that lets you easily duplicate a collection and convert it to colliders suitable for Decentraland.
 
 It allow the user to easily trigger a series of repetitive tasks performed to create colliders for use in Decentraland:
 
-    * Clone a specified collection of objects
-    * Move the clones to their own collection
-    * Add triangulate modifier
-    * Remove materials
-    * Remove bevel modifier
-    * Remove existing colliders
-    * Append the appropriate `_collider` suffix
+* **Clone** a specified collection of objects
+* **Move** the clones to their own collection
+* Add **triangulate** modifier
+* Remove **materials**
+* Remove bevel modifier
+* Remove existing colliders
+* Append the appropriate `_collider` suffix
 
-**Note there is no UI/Panel for this**. Search with F3 for "DCT" and run "DCT: Create Colliders"
+This addon was justified by [xkcd/1205](https://xkcd.com/1205/).
+# Use
+
+ Requires Blender 2.93 or later. 
+
+**Note there is no UI/Panel for this**. 
+
+Search with F3 for "DCT" and run "DCT: Create Colliders"
 
 # License
 
-The code in this addon is licensed under the GNU General Public License v3.0.  Please see LICENSE_CODE.md for details.
+The code in this addon is licensed under the GNU General Public License v3.0.  Please see [LICENSE.md](LICENSE.md) for details.
 
 # Contributing
 
