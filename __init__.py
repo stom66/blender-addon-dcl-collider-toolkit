@@ -19,7 +19,7 @@ bl_info = {
         "name"       : "DCL Collider Toolkit",
         "description": "Simple panel to assist creation and management of colliders for use in Decentraland",
         "author"     : "stom",
-        "version"    : (1, 0),
+        "version"    : (1, 0, 2),
         "blender"    : (3, 0, 0),
         "location"   : "View3D > Tools ",  
         "warning"    : "", # used for warning icon and text in add-ons panel
