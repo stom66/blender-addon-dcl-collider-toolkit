@@ -100,6 +100,11 @@ class mainTask(bpy.types.Operator):
 
         # Loop though all the objects in col_source
         for obj in bpy.data.collections[self.s_colSource].all_objects:
+
+            # Skip unsuitable objects
+            if obj.type != 'MESH' and obj.type != 'CURVE' and obj.type != 'FONT':
+                continue
+
             # Copy the object
             new_obj = obj.copy()
             new_obj.data = obj.data.copy()
