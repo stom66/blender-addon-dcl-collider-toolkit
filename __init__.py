@@ -18,12 +18,12 @@
 bl_info = {
         "name"       : "DCL Collider Toolkit",
         "description": "Simple panel to assist creation and management of colliders for use in Decentraland",
-        "author"     : "stom",
+        "author"     : "stom66",
         "version"    : (1, 0, 2),
         "blender"    : (3, 0, 0),
         "location"   : "View3D > Tools ",  
         "warning"    : "", # used for warning icon and text in add-ons panel
-        #"wiki_url"   : "http://my.wiki.url",
+        "wiki_url"   : "https://github.com/stom66/blender-addon-dcl-collider-toolkit",
         #"tracker_url": "http://my.bugtracker.url",
         "support"    : "COMMUNITY",
         "category"   : "Scene"
