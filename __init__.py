@@ -83,18 +83,17 @@ class mainTask(bpy.types.Operator):
         # Deselect all the objects
         bpy.ops.object.select_all(action='DESELECT')
 
-        # Check for the source and dest collections, create them if required
+        # Check for the source collection
         if not doesCollectionExist(self.s_colSource):
-            print("Creating new collection " + self.s_colSource)
-            self.report({"WARNING"}, "Source collection does not exist")
+            self.report({"WARNING"}, self.s_colSource + " collection does not exist")
             return {'FINISHED'}    
 
+        # Check for the destination collection
         if not doesCollectionExist(self.s_colDest):
-            print("Creating new collection " + self.s_colDest)
-            self.report({"WARNING"}, "Destination collection does not exist")
+            self.report({"WARNING"}, self.s_colDest + " collection does not exist")
             return {'FINISHED'}    
         
-        # Remove all objects in the col_dest collection
+        # Remove all objects in the destination collection
         if self.s_removeExisting:
             for obj in bpy.data.collections[self.s_colDest].all_objects:
                 bpy.data.objects.remove(obj)
@@ -130,12 +129,10 @@ class mainTask(bpy.types.Operator):
 
 def doesCollectionExist(name):
     # Check that the specified collection exists
-    collidersCollectionExists = False
-    for col in bpy.data.collections:
-        if col.name == name:
-            return True
-        print("ERROR: Could not find a collection named " + name)
-        return False
+    coll = bpy.data.collections.get(name)
+    if not coll:
+        print("ERROR: Couldn't find a collection named " + name)
+    return coll
 
 
 def addTriangulateModifier(obj):
