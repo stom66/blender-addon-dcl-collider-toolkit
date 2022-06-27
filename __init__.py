@@ -39,55 +39,59 @@ class mainTask(bpy.types.Operator):
     bl_label   = "DCT: Create Colliders"
     bl_options = { 'REGISTER', 'UNDO'}
 
-    
-    s_removeExisting: bpy.props.BoolProperty(
-        name        = "Clear destination", 
-        description = "Removes all existing objects from the destination collection",
-        default     = True)
-
-    s_removeMaterials: bpy.props.BoolProperty(
-        name        = "Remove materials", 
-        description = "Removes all materials from the new colliders",
-        default     = True)
-
-    s_removeBevels: bpy.props.BoolProperty(
-        name        = "Remove bevels", 
-        description = "Removes any bevel modifiers from mesh colliders",
-        default     = True)
-
-    s_addTriangulate: bpy.props.BoolProperty(
-        name        = "Add triangulate", 
-        description = "Adds a triangulate modifier to the new colliders",
-        default     = True)  
-
-    s_showBounds: bpy.props.BoolProperty(
-        name        = "Show bounds", 
-        description = "Enables the bounding box for all colliders",
-        default     = True)  
-
-    s_showWireframe: bpy.props.BoolProperty(
-        name        = "Enable Wireframe", 
-        description = "Changes the display type of colldiers to wireframe",
-        default     = True)  
 
     s_colSource: bpy.props.StringProperty(
-        name        = "Source collection",
+        name        = "Source collection name",
         description = "The collection to be cloned as colliders",
         maxlen      = 128,
         default     = "_model"
     )
+
     s_colDest: bpy.props.StringProperty(
-        name        = "Destination collection",
+        name        = "Destination collection name",
         description = "The name of the target collection to hold the colliders",
         maxlen      = 128,
         default     = "_colliders"
     )
+
     s_suffix: bpy.props.StringProperty(
-        name        = "Suffix",
-        description = "The suffix to be appended to the newly cloned colliders",
+        name        = "Collider suffix",
+        description = "The suffix to be appended to the newly cloned colliders, should be _collider for DCL",
         maxlen      = 128,
         default     = "_collider"
     )
+
+
+    
+    s_removeExisting: bpy.props.BoolProperty(
+        name        = "Clear destination collection", 
+        description = "Removes all existing objects from the destination collection",
+        default     = True)
+
+    s_removeMaterials: bpy.props.BoolProperty(
+        name        = "Remove materials from colliders", 
+        description = "Removes all materials from the new colliders",
+        default     = True)
+
+    s_removeBevels: bpy.props.BoolProperty(
+        name        = "Remove bevels from colliders", 
+        description = "Removes any bevel modifiers from generated colliders",
+        default     = True)
+
+    s_addTriangulate: bpy.props.BoolProperty(
+        name        = "Triangulate colliders", 
+        description = "Adds a triangulate modifier to the new colliders",
+        default     = True)  
+
+    s_showBounds: bpy.props.BoolProperty(
+        name        = "Enable bounds for colliders", 
+        description = "Enables the bounding box for all colliders",
+        default     = True)  
+
+    s_showWireframe: bpy.props.BoolProperty(
+        name        = "Enable wireframe for colliders", 
+        description = "Changes the display type of colldiers to wireframe",
+        default     = True)  
 
     def execute(self, context):
         scene = context.scene        
