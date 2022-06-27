@@ -4,18 +4,22 @@ A minimal addon for Blender that lets you easily duplicate a collection and conv
 
 It allow the user to easily trigger a series of repetitive tasks performed to create colliders for use in Decentraland:
 
-* **Clone** a specified collection of objects
+![plugin preview](image.png)
+
+* **Clone** a selection/collection of objects
 * **Move** the clones to their own collection
 * Add **triangulate** modifier
 * Remove **materials**
-* Remove bevel modifier
+* Remove **bevels** modifier
 * Remove existing colliders
-* Append the appropriate `_collider` suffix
+* Append the appropriate `_collider` **suffix**
+* Show **wireframe**
+* Show **bounding boxes**
 
 This addon was justified by [xkcd/1205](https://xkcd.com/1205/).
 # Use
 
- Requires Blender 2.93 or later. 
+Download from the [Releases](Releases) page. Requires Blender 2.93 or later. 
 
 **Note there is no UI/Panel for this**. 
 
