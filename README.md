@@ -19,7 +19,7 @@ It allow the user to easily trigger a series of repetitive tasks performed to cr
 This addon was justified by [xkcd/1205](https://xkcd.com/1205/).
 # Use
 
-Download from the [https://github.com/stom66/blender-addon-dcl-collider-toolkit/releases](Releases) page. Requires Blender 2.93 or later. 
+Download from the [Releases](https://github.com/stom66/blender-addon-dcl-collider-toolkit/releases) page. Requires Blender 2.93 or later. 
 
 **Note there is no UI/Panel for this**. 
 
