@@ -19,7 +19,7 @@ bl_info = {
         "name"       : "DCL Collider Toolkit",
         "description": "Simple panel to assist creation and management of colliders for use in Decentraland",
         "author"     : "stom66",
-        "version"    : (1, 0, 2),
+        "version"    : (1, 0, 3),
         "blender"    : (3, 0, 0),
         "location"   : "View3D > Tools ",  
         "warning"    : "", # used for warning icon and text in add-ons panel
@@ -56,6 +56,10 @@ class mainTask(bpy.types.Operator):
     s_addTriangulate: bpy.props.BoolProperty(
         name        = "Add triangulate", 
         description = "Adds a triangulate modifier to the new colliders",
+        default     = True)  
+    s_showBounds: bpy.props.BoolProperty(
+        name        = "Show bounds", 
+        description = "Enables the bounding box for all colliders",
         default     = True)  
 
     s_colSource: bpy.props.StringProperty(
@@ -115,6 +119,10 @@ class mainTask(bpy.types.Operator):
 
             # Move the new object to the col_dest collection
             bpy.data.collections[self.s_colDest].objects.link(new_obj)
+
+            #Show the bounding box
+            if self.s_showBounds:
+                new_obj.show_bounds = True
 
             # Remove any materials
             if self.s_removeMaterials:
