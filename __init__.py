@@ -49,17 +49,25 @@ class mainTask(bpy.types.Operator):
         name        = "Remove materials", 
         description = "Removes all materials from the new colliders",
         default     = True)
+
     s_removeBevels: bpy.props.BoolProperty(
         name        = "Remove bevels", 
         description = "Removes any bevel modifiers from mesh colliders",
         default     = True)
+
     s_addTriangulate: bpy.props.BoolProperty(
         name        = "Add triangulate", 
         description = "Adds a triangulate modifier to the new colliders",
         default     = True)  
+
     s_showBounds: bpy.props.BoolProperty(
         name        = "Show bounds", 
         description = "Enables the bounding box for all colliders",
+        default     = True)  
+
+    s_showWireframe: bpy.props.BoolProperty(
+        name        = "Enable Wireframe", 
+        description = "Changes the display type of colldiers to wireframe",
         default     = True)  
 
     s_colSource: bpy.props.StringProperty(
@@ -123,6 +131,10 @@ class mainTask(bpy.types.Operator):
             #Show the bounding box
             if self.s_showBounds:
                 new_obj.show_bounds = True
+
+            #Enable wireframe
+            if self.s_showWireframe:
+                new_obj.display_type = 'WIRE'
 
             # Remove any materials
             if self.s_removeMaterials:
