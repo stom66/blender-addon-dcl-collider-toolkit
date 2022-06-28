@@ -150,6 +150,9 @@ class mainTask(bpy.types.Operator):
                 for obj in bpy.data.collections[self.s_colDest].all_objects:
                     bpy.data.objects.remove(obj)
 
+        # Define a blank set for the duplicated objects
+        new_objects = set()
+
         # Loop though all the objects in col_source
         for obj in objects:
 
@@ -162,8 +165,8 @@ class mainTask(bpy.types.Operator):
             new_obj.data = obj.data.copy()
             #new_obj.animation_data_clear()
 
-            # Append the object name with name_suffix
-            new_obj.name = new_obj.name + self.s_suffix
+            # Add the new object to the set of new objects
+            new_objects.add(new_obj)
 
             # Move the new object to the col_dest collection
             if self.s_moveCollider:
@@ -191,6 +194,15 @@ class mainTask(bpy.types.Operator):
             # Add a triangulate modifier
             if self.s_addTriangulate:
                 addTriangulateModifier(new_obj)
+
+
+        # Loop through the list of new objects and rename them
+        # We can't rename them in the main loop due to edge cases where non-consecutive numbering
+        # can result in the new object name being used
+        
+        for new_obj in new_objects:
+            # Append the object name with name_suffix
+            new_obj.name = new_obj.name + self.s_suffix
             
         return {'FINISHED'}
 
