@@ -25,6 +25,10 @@ Download from the [Releases](https://github.com/stom66/blender-addon-dcl-collide
 
 Search with F3 for "DCT" and run "DCT: Create Colliders"
 
+# Known Issues
+
+* Blender crashes when there are too many existing colliders. Be sure to save before running the tool. If it crashes, manually remove everything from the `_colliders` collection and run it again.
+
 # License
 
 The code in this addon is licensed under the GNU General Public License v3.0.  Please see [LICENSE.md](LICENSE.md) for details.
